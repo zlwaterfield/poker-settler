@@ -10,4 +10,4 @@ Run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).# poker-settler
+Open [http://localhost:3000](http://localhost:3000)
