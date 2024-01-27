@@ -1,6 +1,8 @@
 "use client";
 
+import Link from 'next/link';
 import { useState } from 'react';
+import GitHubButton from 'react-github-btn';
 
 type Person = {
   id: number;
@@ -73,21 +75,15 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="max-w-5xl mx-auto px-8 pt-8 pb-36 relative">
+      <h2 className="text-3xl font-semibold leading-7 text-gray-900 text-center">Poker Settler</h2>
       <form onSubmit={handleSubmit}>
-        <div className="space-y-4">
+        <div className="space-y-4 mt-10">
           <div className="block sm:flex sm:justify-between sm:items-start">
             <div>
-              <h2 className="text-xl font-semibold leading-7 text-gray-900">Poker Settler</h2>
+              <h2 className="text-xl font-semibold leading-7 text-gray-900">Players</h2>
               <p className="mt-1 text-sm leading-6 text-gray-600">Add the players and their starting and ending values to get started.</p>
             </div>
-            <button
-              type="button"
-              onClick={addPerson}
-              className="mt-2 sm:mt-0 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            >
-              Add player
-            </button>
           </div>
 
           {people.map((person, index) => (
@@ -161,7 +157,14 @@ export default function Home() {
           </div>
         )}
 
-        <div className="mt-3 flex items-center justify-start gap-x-4">
+        <div className="mt-3 flex items-center justify-between gap-x-4">
+          <button
+              type="button"
+              onClick={addPerson}
+              className="mt-2 sm:mt-0 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            >
+              Add player
+            </button>
           <button
             type="submit"
 
@@ -174,7 +177,7 @@ export default function Home() {
 
       {transactions.length > 0 && (
         <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Results</h2>
+          <h2 className="text-xl font-semibold leading-7 text-gray-900">Results</h2>
           <ul className="my-2">
             {transactions.map((transaction, index) => (
               <li key={index} className="mb-2 bg-gray-200 p-3 rounded-lg w-full max-w-md">
@@ -184,6 +187,14 @@ export default function Home() {
           </ul>
         </div>
       )}
+
+      <div className="w-full max-w-[340px] fixed bottom-5 left-0 right-0 mx-auto text-center ">
+        <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-red-600 to-violet-600 opacity-25 blur-lg transition duration-1000 group-hover:opacity-75 group-hover:duration-200" />
+        <div className="relative bg-white rounded-lg px-4 py-2 border flex justify-between items-center">
+          <p className="text-gray-900">Built by <Link href="https://x.com/zlwaterfield" className="underline cursor-pointer">@zlwaterfield</Link></p>
+          <GitHubButton href="https://github.com/zlwatefield/poker-settler" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" aria-label="Star zlwatefield/poker-settler on GitHub">Star</GitHubButton>
+        </div>
+      </div>
     </div>
   );
 }
