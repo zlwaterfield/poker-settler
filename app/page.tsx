@@ -191,7 +191,7 @@ export default function Home() {
       <div className="w-full max-w-[340px] fixed bottom-5 left-0 right-0 mx-auto text-center ">
         <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-red-600 to-violet-600 opacity-25 blur-lg transition duration-1000 group-hover:opacity-75 group-hover:duration-200" />
         <div className="relative bg-white rounded-lg px-4 py-2 border flex justify-between items-center">
-          <p className="text-gray-900">Built by <Link href="https://x.com/zlwaterfield" className="underline cursor-pointer">@zlwaterfield</Link></p>
+          <p className="text-gray-900">Built by <Link href="https://x.com/zlwaterfield" target="_blank" rel="noreferrer" className="underline cursor-pointer">@zlwaterfield</Link></p>
           <GitHubButton href="https://github.com/zlwaterfield/poker-settler" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" aria-label="Star zlwatefield/poker-settler on GitHub">Star</GitHubButton>
         </div>
       </div>
